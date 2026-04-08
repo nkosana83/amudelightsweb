@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+    <meta name="description" content="AuMai Delights - Premium gourmet treats and delicacies delivered fresh to your door">
+    <meta name="keywords" content="AuMai, delicacies, gourmet, treats, premium, artisan">
+    <meta name="theme-color" content="#E75480">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta http-equiv="X-Content-Type-Options" content="nosniff">
+    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
+    <link rel="manifest" href="manifest.json">
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" href="Brand_assets/iCloud Photos from Nkosana Mkandla/iCloud Photos from Nkosana Mkandla/logo.jpeg">
+    <title>AuMai Delights | Premium Gourmet Treats</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+        <nav class="navbar">
+            <div class="container nav-container">
+                <div class="nav-brand">
+                    <img src="Brand_assets/iCloud Photos from Nkosana Mkandla/iCloud Photos from Nkosana Mkandla/logo.jpeg"
+                         alt="AuMai Delights Logo" class="logo-img">
+                    <span class="brand-name">AuMai Delights</span>
+                </div>
+
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu">&#9776;</button>
+
+                <ul class="nav-tabs" id="navTabs">
+                    <li><a href="#" class="nav-tab active" data-tab="about">About</a></li>
+                    <li><a href="#" class="nav-tab" data-tab="treats">Treats</a></li>
+                    <li><a href="#" class="nav-tab" data-tab="packages">Party Packages</a></li>
+                    <li><a href="#" class="nav-tab" data-tab="gallery">Gallery</a></li>
+                </ul>
+
+                <button id="cartBtn" class="cart-btn">&#128722; <span id="cartCount">0</span></button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- ===== HERO ===== -->
+    <section class="hero">
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">AuMai Delights</h1>
+            <p class="hero-subtitle">Artisanal Gourmet Treats &amp; Premium Delicacies</p>
+            <div class="hero-actions">
+                <button class="cta-btn secondary" onclick="switchTab('about')">Our Story</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MAIN CONTENT (TABS) ===== -->
+    <main class="main-content">
+
+        <!-- ── ABOUT TAB ── -->
+        <section id="tab-about" class="tab-panel active">
+
+            <!-- Story -->
+            <div class="about-section">
+                <div class="container">
+                    <div class="about-grid">
+                        <div class="about-text">
+                            <h2>Our Story</h2>
+                            <p>AuMai Delights was born from a simple place—being a mom looking for fun, creative activities to do with my girls and share with our family. What started as sweet moments in the kitchen quickly turned into something more. With encouragement from those around me, I realized these desserts could become more than just a hobby—they could become a business.</p>
+                            <p>Seeing the excitement on my girls' faces and the joy that each dessert brought to others inspired me to keep going. That same excitement is poured into every creation. From dessert shooters to custom treats, each item is made with care, creativity, and attention to detail.</p>
+                            <p>At AuMai Delights, baking is about more than just sweets—it's about creating memorable experiences, bringing people together, and turning everyday moments into something special. What began as family time has grown into a passion-driven business dedicated to making desserts that look beautiful, taste amazing, and leave a lasting impression.</p>
+                        </div>
+                        <div class="about-image-wrap">
+                            <img src="Brand_assets/iCloud Photos from Nkosana Mkandla/iCloud Photos from Nkosana Mkandla/wow.png"
+                                 alt="Artisan Treats" class="about-img">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Values -->
+            <div class="values-section">
+                <div class="container">
+                    <h2 class="section-title">Why AuMai?</h2>
+                    <div class="values-grid">
+                        <div class="value-card">
+                            <div class="value-icon">&#127859;</div>
+                            <h3>Artisan Quality</h3>
+                            <p>Every item is handcrafted using premium, carefully sourced ingredients from trusted makers.</p>
+                        </div>
+                        <div class="value-card">
+                            <div class="value-icon">&#127775;</div>
+                            <h3>Freshness First</h3>
+                            <p>Orders are processed within 24 hours with temperature-controlled packaging to ensure peak freshness.</p>
+                        </div>
+                        <div class="value-card">
+                            <div class="value-icon">&#127873;</div>
+                            <h3>Gift-Ready</h3>
+                            <p>Beautiful packaging as standard, with optional personalised gift notes for any occasion.</p>
+                        </div>
+                        <div class="value-card">
+                            <div class="value-icon">&#10084;&#65039;</div>
+                            <h3>Made With Love</h3>
+                            <p>We genuinely care about what goes into your hands — and your mouth. No shortcuts, ever.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Testimonials -->
+            <div class="testimonials-section">
+                <div class="container">
+                    <h2 class="section-title">What Our Customers Say</h2>
+                    <div class="tab-switcher">
+                        <button class="tab-switch-btn active" id="tabTestimonials" onclick="switchTestimonialTab('testimonials')">Testimonials</button>
+                        <button class="tab-switch-btn" id="tabRatings" onclick="switchTestimonialTab('ratings')">Service Rating</button>
+                    </div>
+
+                    <div id="panelTestimonials">
+                        <div id="testimonialsList" class="testimonials-list"></div>
+
+                        <form id="testimonialForm" class="testimonial-form" aria-label="Submit a review">
+                            <input id="testimonialName" type="text" placeholder="Your name" required>
+                            <input type="hidden" id="testimonialCaptchaToken" value="">
+                            <select id="testimonialRating" aria-label="Rating">
+                                <option value="5">5 &#9733; Excellent</option>
+                                <option value="4">4 &#9733; Very Good</option>
+                                <option value="3">3 &#9733; Good</option>
+                                <option value="2">2 &#9733; Fair</option>
+                                <option value="1">1 &#9733; Poor</option>
+                            </select>
+                            <textarea id="testimonialMessage" placeholder="Share your experience..." rows="4" required></textarea>
+                            <button type="submit" class="submit-btn">Submit Review</button>
+                        </form>
+                    </div>
+
+                    <div id="panelRatings" style="display:none">
+                        <div class="ratings-summary">
+                            <div class="average-rating" id="averageRating">4.9</div>
+                            <div class="rating-stars" id="ratingStars"></div>
+                            <div class="rating-count" id="ratingCount"></div>
+                            <div class="rating-breakdown" id="ratingBreakdown"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Contact -->
+            <div class="contact-section">
+                <div class="container">
+                    <h2 class="section-title">Get in Touch</h2>
+                    <div class="contact-layout">
+                        <div class="contact-details">
+                            <div class="contact-item">
+                                <h3>&#128222; Phone</h3>
+                                <p><a href="tel:2402779097">240-277-9097</a></p>
+                            </div>
+                            <div class="contact-item">
+                                <h3>Follow Us</h3>
+                                <div class="social-links">
+                                    <a href="https://www.instagram.com/nessa_aumaidelights?igsh=MTA4cHcxb29uN2dmYQ==" target="_blank" rel="noopener noreferrer" class="social-link" title="Instagram">&#128247;</a>
+                                    <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" class="social-link" title="X / Twitter">&#120143;</a>
+                                    <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" class="social-link" title="Facebook">f</a>
+                                </div>
+                            </div>
+                        </div>
+                        <form class="contact-form">
+                            <input type="text" placeholder="Your Name" required>
+                            <input type="email" placeholder="Your Email" required>
+                            <textarea placeholder="Your Message" rows="5" required></textarea>
+                            <button type="submit" class="submit-btn">Send Message</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+        </section>
+
+        <!-- ── TREATS TAB ── -->
+        <section id="tab-treats" class="tab-panel">
+            <div class="party-image-wrap">
+                <img src="Brand_assets/iCloud Photos from Nkosana Mkandla/iCloud Photos from Nkosana Mkandla/Treats.png"
+                     alt="Treats" class="party-full-img">
+            </div>
+        </section>
+
+        <!-- ── PARTY PACKAGES TAB ── -->
+        <section id="tab-packages" class="tab-panel">
+            <div class="party-image-wrap">
+                <img src="Brand_assets/iCloud Photos from Nkosana Mkandla/iCloud Photos from Nkosana Mkandla/Party Price List.png"
+                     alt="Party Packages" class="party-full-img">
+            </div>
+        </section>
+
+        <!-- ── GALLERY TAB ── -->
+        <section id="tab-gallery" class="tab-panel">
+            <div class="container">
+                <h2 class="section-title">Gallery</h2>
+                <p class="section-subtitle">A glimpse into our world of artisan delights</p>
+
+                <!-- Featured banner -->
+                <div class="gallery-featured">
+                    <img src="Brand_assets/iCloud Photos from Nkosana Mkandla/iCloud Photos from Nkosana Mkandla/Banner.jpeg"
+                         alt="AuMai Delights" loading="lazy">
+                </div>
+
+                <div class="gallery-group">
+                    <div class="gallery-item">
+                        <img src="Brand_assets/iCloud Photos from Nkosana Mkandla/iCloud Photos from Nkosana Mkandla/123_1-1.jpeg" alt="Artisan Chocolate Truffles" loading="lazy">
+                        <div class="gallery-caption">Artisan Chocolate Truffles</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Brand_assets/iCloud Photos from Nkosana Mkandla/iCloud Photos from Nkosana Mkandla/123_1-12.jpeg" alt="Dark Chocolate Bark" loading="lazy">
+                        <div class="gallery-caption">Dark Chocolate Bark</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Brand_assets/iCloud Photos from Nkosana Mkandla/iCloud Photos from Nkosana Mkandla/123_1-17.jpeg" alt="White Chocolate Mousse" loading="lazy">
+                        <div class="gallery-caption">White Chocolate Mousse</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Brand_assets/iCloud Photos from Nkosana Mkandla/iCloud Photos from Nkosana Mkandla/123_1-19.jpeg" alt="Vanilla Bean Fudge" loading="lazy">
+                        <div class="gallery-caption">Vanilla Bean Fudge</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Brand_assets/iCloud Photos from Nkosana Mkandla/iCloud Photos from Nkosana Mkandla/123_1-8.jpeg" alt="Macarons Assorted Box" loading="lazy">
+                        <div class="gallery-caption">Macarons Assorted Box</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Brand_assets/iCloud Photos from Nkosana Mkandla/iCloud Photos from Nkosana Mkandla/123_1-4.jpeg" alt="Honey Lavender Shortbread" loading="lazy">
+                        <div class="gallery-caption">Honey Lavender Shortbread</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Brand_assets/iCloud Photos from Nkosana Mkandla/iCloud Photos from Nkosana Mkandla/123_1-13.jpeg" alt="Spiced Sugar Cookies" loading="lazy">
+                        <div class="gallery-caption">Spiced Sugar Cookies</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Brand_assets/iCloud Photos from Nkosana Mkandla/iCloud Photos from Nkosana Mkandla/123_1-16.jpeg" alt="Walnut Biscotti" loading="lazy">
+                        <div class="gallery-caption">Walnut Biscotti</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Brand_assets/iCloud Photos from Nkosana Mkandla/iCloud Photos from Nkosana Mkandla/123_1-10.jpeg" alt="Caramelized Almonds" loading="lazy">
+                        <div class="gallery-caption">Caramelized Almonds</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Brand_assets/iCloud Photos from Nkosana Mkandla/iCloud Photos from Nkosana Mkandla/123_1-20.jpeg" alt="Sesame Brittle" loading="lazy">
+                        <div class="gallery-caption">Sesame Brittle</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Brand_assets/iCloud Photos from Nkosana Mkandla/iCloud Photos from Nkosana Mkandla/123_1-21.jpeg" alt="Lavender Honey Drops" loading="lazy">
+                        <div class="gallery-caption">Lavender Honey Drops</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Brand_assets/iCloud Photos from Nkosana Mkandla/iCloud Photos from Nkosana Mkandla/123_1-14.jpeg" alt="Pistachio Pudding Cups" loading="lazy">
+                        <div class="gallery-caption">Pistachio Pudding Cups</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Brand_assets/iCloud Photos from Nkosana Mkandla/iCloud Photos from Nkosana Mkandla/123_1.jpeg" alt="Raspberry Delights" loading="lazy">
+                        <div class="gallery-caption">Raspberry Delights</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Brand_assets/iCloud Photos from Nkosana Mkandla/iCloud Photos from Nkosana Mkandla/123_1-6.jpeg" alt="Exotic Fruit Preserve" loading="lazy">
+                        <div class="gallery-caption">Exotic Fruit Preserve</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Brand_assets/iCloud Photos from Nkosana Mkandla/iCloud Photos from Nkosana Mkandla/123_1-15.jpeg" alt="Berry Jam Collection" loading="lazy">
+                        <div class="gallery-caption">Berry Jam Collection</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Brand_assets/iCloud Photos from Nkosana Mkandla/iCloud Photos from Nkosana Mkandla/123_1-18.jpeg" alt="Citrus Marmalade" loading="lazy">
+                        <div class="gallery-caption">Citrus Marmalade</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Brand_assets/iCloud Photos from Nkosana Mkandla/iCloud Photos from Nkosana Mkandla/123_1-3.jpeg" alt="Seasonal Spring Delights" loading="lazy">
+                        <div class="gallery-caption">Seasonal Spring Delights</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Brand_assets/iCloud Photos from Nkosana Mkandla/iCloud Photos from Nkosana Mkandla/123_1-2.jpeg" alt="Gourmet Cheese Selection" loading="lazy">
+                        <div class="gallery-caption">Gourmet Cheese Selection</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Brand_assets/iCloud Photos from Nkosana Mkandla/iCloud Photos from Nkosana Mkandla/123_1-7.jpeg" alt="Roasted Nut Medley" loading="lazy">
+                        <div class="gallery-caption">Roasted Nut Medley</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Brand_assets/iCloud Photos from Nkosana Mkandla/iCloud Photos from Nkosana Mkandla/123_1-11.jpeg" alt="Truffle Olive Oil" loading="lazy">
+                        <div class="gallery-caption">Truffle Olive Oil</div>
+                    </div>
+                    <div class="gallery-item">
+                        <img src="Brand_assets/iCloud Photos from Nkosana Mkandla/iCloud Photos from Nkosana Mkandla/123_1-22.jpeg" alt="Cardamom Coffee Beans" loading="lazy">
+                        <div class="gallery-caption">Cardamom Coffee Beans</div>
+                    </div>
+                </div>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- ===== PRODUCT MODAL ===== -->
+    <div id="productModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-body">
+                <img id="modalImage" src="" alt="">
+                <div class="modal-info">
+                    <h2 id="modalTitle"></h2>
+                    <p id="modalDescription"></p>
+                    <p class="price" id="modalPrice"></p>
+                    <div class="quantity-selector">
+                        <button id="decreaseQty">&#8722;</button>
+                        <input type="number" id="quantityInput" value="1" min="1">
+                        <button id="increaseQty">&#43;</button>
+                    </div>
+                    <button class="add-to-cart-btn" id="addToCartBtn">Add to Cart</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== CHATBOT ===== -->
+    <div id="chatbotContainer" class="chatbot-container">
+        <div id="chatbotToggle" class="chatbot-toggle">
+            <span>&#128172;</span>
+            <span class="chatbot-tooltip">Chat with us!</span>
+        </div>
+        <div id="chatbotWindow" class="chatbot-window">
+            <div class="chatbot-header">
+                <h3>AuMai Assistant</h3>
+                <button id="chatbotClose" class="chatbot-close">&times;</button>
+            </div>
+            <div id="chatbotMessages" class="chatbot-messages">
+                <div class="chatbot-message bot-message">
+                    <p>&#128075; Hello! How can I help you today?</p>
+                </div>
+            </div>
+            <div class="chatbot-suggestions" id="chatbotSuggestions">
+                <button class="suggestion-btn" onclick="handleChatQuestion('shipping')">&#128230; Shipping</button>
+                <button class="suggestion-btn" onclick="handleChatQuestion('return')">&#8617;&#65039; Returns</button>
+                <button class="suggestion-btn" onclick="handleChatQuestion('products')">&#127869;&#65039; Products</button>
+                <button class="suggestion-btn" onclick="handleChatQuestion('payment')">&#128179; Payment</button>
+            </div>
+            <div class="chatbot-input">
+                <input type="text" id="chatInput" placeholder="Type your question..." aria-label="Chat input">
+                <button id="chatSendBtn">Send</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer">
+        <div class="container">
+            <p class="footer-brand">AuMai Delights</p>
+            <p>&copy; 2026 AuMai Delights. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script>
+        if ('serviceWorker' in navigator) {
+            navigator.serviceWorker.register('sw.js').catch(() => {});
+        }
+    </script>
+</body>
+</html>

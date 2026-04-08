@@ -1,0 +1,39 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>AuMai Admin - Testimonials Moderation</title>
+  <link rel="stylesheet" href="styles.css">
+  <style>body{background:#fff;padding:2rem;font-family:inherit} .moderation-list{max-width:900px;margin:0 auto} .moderation-card{background:#fff;border-radius:8px;padding:1rem;margin-bottom:1rem;border:1px solid rgba(0,0,0,0.06)} .actions{display:flex;gap:0.5rem;}</style>
+</head>
+<body>
+  <h1>Testimonials Moderation</h1>
+  <p>Use your admin token in the <code>x-admin-token</code> header to moderate.</p>
+  <div class="moderation-list" id="moderationList">Loading...</div>
+  <script>
+    async function loadPending(){
+      const token = prompt('Enter admin token (x-admin-token):');
+      if(!token) return alert('Token required');
+      const res = await fetch('/api/moderation',{headers:{'x-admin-token':token}});
+      if(!res.ok) return alert('Failed to fetch pending testimonials');
+      const json = await res.json();
+      const list = document.getElementById('moderationList');
+      list.innerHTML='';
+      if(json.pending.length===0) list.textContent='No pending testimonials';
+      json.pending.forEach(t=>{
+        const el = document.createElement('div'); el.className='moderation-card';
+        el.innerHTML = `<strong>${t.name}</strong> <small>• ${t.date}</small><p>${t.text}</p><div class='actions'><button onclick="moderate('${t.id}','approve')">Approve</button><button onclick="moderate('${t.id}','reject')">Reject</button></div>`;
+        list.appendChild(el);
+      });
+      window._adminToken = token;
+    }
+    async function moderate(id,action){
+      if(!window._adminToken) return alert('No admin token');
+      const res = await fetch('/api/moderate',{method:'POST',headers:{'content-type':'application/json','x-admin-token':window._adminToken},body:JSON.stringify({id,action})});
+      if(res.ok){ alert('Done'); loadPending(); } else { alert('Failed'); }
+    }
+    loadPending();
+  </script>
+</body>
+</html>

@@ -1,0 +1,56 @@
+# Node modules
+node_modules/
+npm-debug.log
+yarn-error.log
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# Build and dist directories
+dist/
+build/
+out/
+
+# Temporary files
+.tmp/
+temp/
+*.log
+*.pid
+*.seed
+
+# OS files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+
+# Cache directories
+.cache/
+*.cache
+
+# Dependencies lock files (optional - comment out if you want to commit)
+# package-lock.json
+# yarn.lock
+
+# Testing
+coverage/
+.nyc_output/
+
+# Credentials (keep these secure!)
+credentials.json
+token.json
+.aws/
+~/.ssh/
